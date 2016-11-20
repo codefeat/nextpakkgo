@@ -23,6 +23,7 @@
     <% @deliveries.each do |delivery| %>
       <tr>
         <td><%= delivery.name %></td>
+        <td><%= link_to delivery.address, "http://maps.google.com/?q=#{delivery.address}" %></td>
         <td><%= delivery.address %></td>
         <td><%= delivery.phone %></td>
         <td><%= delivery.size %></td>
@@ -37,3 +38,4 @@
 <br>
 
 <%= link_to 'New Delivery', new_delivery_path %>
+
