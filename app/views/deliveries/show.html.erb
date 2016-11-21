@@ -21,5 +21,7 @@
   <%= @delivery.size %>
 </p>
 
+<%= link_to "Write a Review", new_delivery_review_path(@delivery), class: "btn btn-primary" %>
+
 <%= link_to 'Edit', edit_delivery_path(@delivery) %> |
 <%= link_to 'Back', deliveries_path %>
