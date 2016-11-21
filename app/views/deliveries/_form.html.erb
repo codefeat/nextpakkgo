@@ -1,7 +1,10 @@
 <%= form_for(@delivery, :html => { multipart: true}) do |f| %>
   <% if @delivery.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@delivery.errors.count, "error") %> prohibited this delivery from being saved:</h2>
+     <div id="error_explanation" class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert">
+      <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+      <h4><%= pluralize(@delivery.errors.count, "error") %> prohibited this delivery from being saved:</h4>
 
       <ul>
       <% @delivery.errors.full_messages.each do |message| %>
@@ -13,19 +16,19 @@
 
   <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "iPhone" %>
   </div>
   <div class="form-group">
     <%= f.label :address %><br>
-    <%= f.text_field :address, class: "form-control" %>
+    <%= f.text_field :address, class: "form-control", placeholder: "469 West Bank Ave, Minneapolis, MN 55369" %>
   </div>
   <div class="form-group">
     <%= f.label :phone %><br>
-    <%= f.text_field :phone, class: "form-control" %>
+    <%= f.text_field :phone, class: "form-control", placeholder: "(321) 789-9654" %>
   </div>
   <div class="form-group">
     <%= f.label :size %><br>
-    <%= f.text_field :size, class: "form-control" %>
+    <%= f.text_field :size, class: "form-control", placeholder: "Large" %>
   </div>
   <div class="form-group">
     <%= f.label :image%><br>
