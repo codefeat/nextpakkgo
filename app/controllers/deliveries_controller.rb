@@ -11,6 +11,11 @@ class DeliveriesController < ApplicationController
   # GET /deliveries/1.json
   def show
     @reviews = Review.where(delivery_id: @delivery.id)
+    if @reviews.blank?
+      @avg_rating = 0
+    else
+    @vg_rating = @reviews.average(:rating).round(2)
+    end
   end
 
   # GET /deliveries/new
